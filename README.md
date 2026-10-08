@@ -8,8 +8,6 @@ Predicting how many cycles a lithium-ion cell will last using only its first 100
 
 This project starts by replicating [Severson et al., *Data-driven prediction of battery cycle life before capacity degradation*, Nature Energy 4, 383–391 (2019)](https://www.nature.com/articles/s41560-019-0356-8). They predicted cycle life of 124 commercial LFP/graphite cells to 9.1% test error from the first 100 cycles. Their modelling code is under an academic licence, so all models here are written from scratch.
 
-**Extension:** *(to decide by week 3; see the project plan)*
-
 ## Data
 
 Download the three main batch files from [data.matr.io/1](https://data.matr.io/1/) into `data/raw/`:
