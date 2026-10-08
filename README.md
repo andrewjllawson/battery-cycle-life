@@ -41,4 +41,4 @@ results/metrics.csv   one row per model per test set (from week 3)
 
 ## Citation
 
-If you use the data, cite: Severson, K.A., Attia, P.M., et al. Data-driven prediction of battery cycle life before capacity degradation. *Nature Energy* 4, 383–391 (2019).
+Severson, K.A., Attia, P.M., et al. Data-driven prediction of battery cycle life before capacity degradation. *Nature Energy* 4, 383–391 (2019).
