@@ -1,0 +1,18 @@
+# Data is large and has its own licence: download it, don't commit it
+data/raw/*
+data/processed/*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# keep empty folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
