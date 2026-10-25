@@ -76,8 +76,17 @@ def evaluate(name: str, model, data: pd.DataFrame, features: list[str],
 
 
 def save_metrics(rows: list[dict], path: Path | str) -> pd.DataFrame:
-    """Write all rows to metrics.csv (overwrites, so re-running never duplicates)."""
+    """Merge rows into metrics.csv and return the whole table.
+
+    A row whose model name is already in the file replaces the old row, so
+    re-running a notebook never duplicates; rows from other notebooks are kept
+    (03 writes the linear models, 04 adds the tree models).
+    """
+    path = Path(path)
     table = pd.DataFrame(rows).set_index("model")
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        old = pd.read_csv(path, index_col="model")
+        table = pd.concat([old.drop(index=table.index, errors="ignore"), table])
+    path.parent.mkdir(parents=True, exist_ok=True)
     table.to_csv(path)
     return table
